@@ -134,7 +134,7 @@ export default function Home() {
               ))}
             </div>
 
-            <FeaturedVideosSection videos={siteConfig.featuredVideos} className="border-border" />
+            <FeaturedVideosSection videos={[...siteConfig.featuredVideos]} className="border-border" />
             
             <QuickLinks links={quickLinksWithIcons} className="border-border" />
             

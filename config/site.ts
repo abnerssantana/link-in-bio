@@ -83,38 +83,20 @@ export const siteConfig = {
   ],
   quickLinks: [
     {
-      title: "Blog de Corrida",
-      url: "#",
-      icon: "book",
-      isExternal: false,
-    },
-    {
-      title: "Calendário de Provas 2024",
-      url: "#",
-      icon: "calendar",
-      isExternal: false,
-    },
-    {
-      title: "Loja de Equipamentos",
+      title: "Loja vivendo a corrida",
       url: "#",
       icon: "shopping-bag",
       isExternal: true,
     },
     {
-      title: "Resultados de Provas",
-      url: "#",
-      icon: "trophy",
-      isExternal: true,
-    },
-    {
       title: "Calculadora de Pace",
-      url: "#",
+      url: "https://magictraining.run/calculadora",
       icon: "calculator",
       isExternal: false,
     },
     {
       title: "Plataforma de Treinos",
-      url: "#",
+      url: "https://magictraining.run",
       icon: "wrench",
       isExternal: false,
     },

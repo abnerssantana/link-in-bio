@@ -21,8 +21,7 @@ interface QuickLinksProps {
 
 export function QuickLinks({ links, className, showLinkIcon = false }: QuickLinksProps) {
   return (
-    <Card
-    >
+    <Card className={cn("bg-white/80 border-0 shadow-md", className)}>
       <CardHeader>
         <SectionHeader title="Links Rápidos" />
       </CardHeader>
@@ -33,16 +32,20 @@ export function QuickLinks({ links, className, showLinkIcon = false }: QuickLink
             href={link.url}
             target={link.isExternal ? "_blank" : undefined}
             rel={link.isExternal ? "noopener noreferrer" : undefined}
+            className="group"
           >
-            <Button variant="outline" className="w-full justify-between border-zinc-700 hover:bg-zinc-800 cursor-pointer">
-              <span className="flex items-center gap-2">
+            <Button 
+              variant="outline" 
+              className="w-full justify-between border-zinc-200 bg-white hover:bg-zinc-50 text-zinc-800 cursor-pointer transition-all duration-200"
+            >
+              <span className="flex items-center gap-2 text-emerald-600 group-hover:text-emerald-500 transition-colors">
                 {link.icon}
-                {link.title}
+                <span className="text-zinc-800">{link.title}</span>
               </span>
               {link.isExternal ? (
-                <ExternalLink className="h-4 w-4" />
+                <ExternalLink className="h-4 w-4 text-zinc-400 group-hover:text-emerald-500 transition-colors" />
               ) : (
-                showLinkIcon && <LinkIcon className="h-4 w-4" />
+                showLinkIcon && <LinkIcon className="h-4 w-4 text-zinc-400 group-hover:text-emerald-500 transition-colors" />
               )}
             </Button>
           </Link>

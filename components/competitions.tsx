@@ -58,7 +58,7 @@ export function Competitions({ className }: CompetitionsProps) {
 
   return (
     <Card
-      className={cn("bg-zinc-900/80 text-white dark:bg-zinc-800/80 backdrop-blur-xs border-zinc-800/50", className)}
+      className={cn("bg-zinc-900/80 text-zinc-800 dark:bg-zinc-800/80 backdrop-blur-xs border-zinc-800/50", className)}
     >
       <CardHeader>
         <SectionHeader title="Histórico de Competições" />

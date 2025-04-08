@@ -18,7 +18,7 @@ interface FeaturedVideosSectionProps {
 
 export function FeaturedVideosSection({ videos, className }: FeaturedVideosSectionProps) {
   return (
-    <Card className={cn("bg-zinc-900/80 text-white dark:bg-zinc-800/80 backdrop-blur-xs border-zinc-800/50", className)}>
+    <Card className={cn("bg-zinc-900/80 text-zinc-800 dark:bg-zinc-800/80 backdrop-blur-xs border-zinc-800/50", className)}>
       <CardHeader className="flex flex-row items-center">
         <Play className="h-5 w-5 text-red-600 mr-2" />
         <CardTitle>Vídeos em Destaque</CardTitle>
@@ -43,7 +43,7 @@ export function FeaturedVideosSection({ videos, className }: FeaturedVideosSecti
                   />
                   <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <div className="w-12 h-12 rounded-full bg-red-600/90 flex items-center justify-center">
-                      <Play className="h-6 w-6 text-white" />
+                      <Play className="h-6 w-6 text-zinc-800" />
                     </div>
                   </div>
                 </div>

@@ -31,7 +31,7 @@ export function FeatureCard({
   const btnColor = buttonColor || (icon === "calculator" ? "bg-green-600 hover:bg-green-700" : "bg-blue-600 hover:bg-blue-700")
 
   return (
-    <Card className={cn("text-white border-zinc-800", color, className)}>
+    <Card className={cn("text-zinc-800 border-zinc-800", color, className)}>
       <CardContent className="p-6">
         <div className="mb-4">
           {icon === "calculator" ? (
@@ -45,7 +45,7 @@ export function FeatureCard({
       </CardContent>
       <CardFooter className="pt-0">
         <Button
-          className={cn(btnColor, "text-white cursor-pointer")}
+          className={cn(btnColor, "text-zinc-800 cursor-pointer")}
         >
           {buttonText}
         </Button>

@@ -53,7 +53,7 @@ export function SocialLinks({ links, className }: SocialLinksProps) {
   }
 
   return (
-    <Card className="bg-zinc-900/80 text-white dark:bg-zinc-800/80 backdrop-blur-xs border-zinc-800/50">
+    <Card className="bg-zinc-900/80 text-zinc-800 dark:bg-zinc-800/80 backdrop-blur-xs border-zinc-800/50">
       <CardHeader>
         <SectionHeader title="Redes Sociais" />
       </CardHeader>

@@ -94,7 +94,7 @@ export default function Home() {
               </Card>
             ))}
 
-            <SocialLinks links={siteConfig.socialLinks} className="border-border" />
+            <SocialLinks links={[...siteConfig.socialLinks]} className="border-border" />
           </div>
 
           {/* Coluna Central */}

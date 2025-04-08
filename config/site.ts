@@ -1,5 +1,3 @@
-import type { ThemeConfig } from "@/types/theme"
-
 export const siteConfig = {
   name: "Abner Santana",
   description: "Compartilhando conhecimento sobre corrida de rua, treinos e experiências.",

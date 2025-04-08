@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { Calculator, Wrench } from "lucide-react"
@@ -26,7 +27,7 @@ export function FeatureCard({
   accentColor,
   buttonColor
 }: FeatureCardProps) {
-  // Usar as cores passadas como prop, ou definir padrões baseados no tipo de ícone
+  // Use as cores passadas como prop, ou definir padrões baseados no tipo de ícone
   const iconColor = accentColor || (icon === "calculator" ? "text-green-500" : "text-blue-500")
   const btnColor = buttonColor || (icon === "calculator" ? "bg-green-600 hover:bg-green-700" : "bg-blue-600 hover:bg-blue-700")
 
@@ -44,11 +45,13 @@ export function FeatureCard({
         <p className="text-sm text-zinc-400">{description}</p>
       </CardContent>
       <CardFooter className="pt-0">
-        <Button
-          className={cn(btnColor, "text-zinc-800 cursor-pointer")}
-        >
-          {buttonText}
-        </Button>
+        <Link href={buttonUrl} target="_blank" rel="noopener noreferrer">
+          <Button
+            className={cn(btnColor, "text-white cursor-pointer rounded-md")}
+          >
+            {buttonText}
+          </Button>
+        </Link>
       </CardFooter>
     </Card>
   )

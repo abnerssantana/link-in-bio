@@ -102,10 +102,10 @@ export const siteConfig = {
     },
   ],
   socialLinks: [
-    { platform: "instagram", url: "#", username: "@abnerssantana", color: "text-pink-500" },
-    { platform: "youtube", url: "#", username: "@abnerssantana", color: "text-red-500" },
-    { platform: "strava", url: "#", username: "@abnerssantana", color: "text-orange-500" },
-    { platform: "twitter", url: "#", username: "@abnerssantana", color: "text-blue-400" },
-    { platform: "facebook", url: "#", username: "Abner Santana", color: "text-blue-600" },
-  ],
+    { platform: "instagram", url: "https://instagram.com/abnerssantana", username: "@abnerssantana", color: "text-pink-500" },
+    { platform: "youtube", url: "https://youtube.com/@abnerssantana", username: "@abnerssantana", color: "text-red-500" },
+    { platform: "strava", url: "https://strava.com/athletes/abnerssantana", username: "@abnerssantana", color: "text-orange-500" },
+    { platform: "twitter", url: "https://twitter.com/abnerssantana", username: "@abnerssantana", color: "text-blue-400" },
+    { platform: "facebook", url: "https://facebook.com/abnersantana", username: "Abner Santana", color: "text-blue-600" },
+  ] as { platform: string; url: string; username: string; color: string }[], // Add this type assertion
 } as const

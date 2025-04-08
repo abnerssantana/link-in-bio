@@ -15,7 +15,7 @@ import { cn } from "@/lib/utils"
 import { SectionHeader } from "@/components/section-header"
 import Link from "next/link"
 
-interface SocialLink {
+export interface SocialLink {
   platform: string
   url: string
   username: string

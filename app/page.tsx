@@ -177,7 +177,6 @@ export default function Page() {
                           variant="outline"
                           className="px-3 py-1.5 border-emerald-100 bg-gradient-to-r from-emerald-50 to-blue-50 text-emerald-700 -sm"
                         >
-                          <Trophy className="h-3 w-3 mr-1.5" />
                           {`${achievement.distance} - ${achievement.time}`}
                         </Badge>
                       </motion.div>

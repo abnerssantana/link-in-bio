@@ -19,10 +19,10 @@ export const siteConfig = {
     location: "São José do Rio Preto - SP",
   },
   achievements: [
-    { distance: "5K", time: "19:27" },
-    { distance: "10K", time: "39:29" },
-    { distance: "21K", time: "1:17:28" },
-    { distance: "42K", time: "2:59:42" },
+    { distance: "5K", time: "14:27" },
+    { distance: "10K", time: "30:49" },
+    { distance: "21K", time: "1:11:22" },
+    { distance: "42K", time: "2:30:44" },
   ],
   featuredVideos: [
     {

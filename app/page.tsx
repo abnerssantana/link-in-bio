@@ -126,9 +126,9 @@ export default function Page() {
 
             {/* Info Cards */}
             {[
-              { icon: <Cake className="size-5 text-emerald-600" />, text: `Nascido em ${siteConfig.author.birthYear} | ${siteConfig.author.weight} | ${siteConfig.author.height}` },
-              { icon: <MapPin className="size-5 text-emerald-600" />, text: siteConfig.author.location },
-              { icon: <Mail className="size-5 text-emerald-600" />, text: siteConfig.links.email, link: `mailto:${siteConfig.links.email}` }
+              { icon: <Cake className="size-5 text-emerald-600 mx-4" />, text: `Nascido em ${siteConfig.author.birthYear} | ${siteConfig.author.weight} | ${siteConfig.author.height}` },
+              { icon: <MapPin className="size-5 text-emerald-600 mx-4" />, text: siteConfig.author.location },
+              { icon: <Mail className="size-5 text-emerald-600 mx-4" />, text: siteConfig.links.email, link: `mailto:${siteConfig.links.email}` }
             ].map((item, index) => (
               <motion.div 
                 key={index} 
@@ -136,8 +136,8 @@ export default function Page() {
                 transition={{ duration: 0.2 }}
                 variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
               >
-                <Card className="border-0 -md bg-white/80">
-                  <CardContent className="flex items-center gap-3 p-4">
+                <Card className="border-0 bg-white/80">
+                  <CardContent className="flex items-center py-0 px-4">
                     {item.icon}
                     {item.link ? (
                       <Link href={item.link} className="transition-colors hover:text-emerald-600">
@@ -225,9 +225,9 @@ export default function Page() {
                         </div>
                       </div>
                     </div>
-                    <Button asChild className="bg-red-500 text-zinc-800 hover:bg-red-600 -md" size="sm">
+                    <Button asChild className="bg-red-500 text-white hover:bg-red-600 -md" size="sm">
                       <Link href={siteConfig.links.youtube} target="_blank" rel="noopener noreferrer">
-                        Inscreva-se <span className="ml-2 text-xs">5.6K</span>
+                        Inscreva-se <span className="ml-2 text-xs">6.3K</span>
                       </Link>
                     </Button>
                   </div>

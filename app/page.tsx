@@ -21,7 +21,8 @@ import {
   Facebook,
   Linkedin,
   Medal as Strava,
-  ArrowRight
+  ArrowRight,
+  Menu
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -67,12 +68,12 @@ export default function Page() {
   }, [controls]);
 
   return (
-    <main className="min-h-screen pb-16">
+    <main className="min-h-screen pb-8 sm:pb-12 md:pb-16">
       <AnimatedBackground />
       
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-3 py-6 sm:px-4 sm:py-8 md:py-12">
         <motion.div 
-          className="grid grid-cols-1 gap-8 md:grid-cols-3"
+          className="grid grid-cols-1 gap-5 sm:gap-6 md:gap-8 md:grid-cols-3"
           initial={{ opacity: 0, y: 20 }}
           animate={controls}
         >
@@ -84,7 +85,7 @@ export default function Page() {
               transition={{ duration: 0.2 }}
               variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
             >
-              <Card className="overflow-hidden border-0  bg-white/80">
+              <Card className="overflow-hidden border-0 bg-white/80 shadow-sm">
                 <CardContent className="p-6">
                   <div className="flex flex-col items-center">
                     <motion.div 
@@ -97,9 +98,9 @@ export default function Page() {
                       <Image
                         src="/avatar.jpg"
                         alt={siteConfig.author.name}
-                        width={150}
-                        height={150}
-                        className="rounded-full border-4 border-white object-cover relative z-10"
+                        width={120}
+                        height={120}
+                        className="rounded-full border-3 border-white object-cover relative z-10 sm:w-32 sm:h-32 md:w-36 md:h-36"
                       />
                     </motion.div>
                     
@@ -112,11 +113,11 @@ export default function Page() {
                       Seu Alienígena Favorito 👽❤️✌️
                     </motion.div>
                     
-                    <CardTitle className="mb-2 text-2xl font-bold text-zinc-800 text-center">
+                    <CardTitle className="mb-2 text-xl sm:text-2xl font-bold text-zinc-800 text-center">
                       {siteConfig.author.name}
                     </CardTitle>
                     
-                    <CardDescription className="text-zinc-500 text-center">
+                    <CardDescription className="text-sm sm:text-base text-zinc-500 text-center">
                       {siteConfig.description}
                     </CardDescription>
                   </div>
@@ -126,9 +127,9 @@ export default function Page() {
 
             {/* Info Cards */}
             {[
-              { icon: <Cake className="size-5 text-emerald-600 mx-4" />, text: `Nascido em ${siteConfig.author.birthYear} | ${siteConfig.author.weight} | ${siteConfig.author.height}` },
-              { icon: <MapPin className="size-5 text-emerald-600 mx-4" />, text: siteConfig.author.location },
-              { icon: <Mail className="size-5 text-emerald-600 mx-4" />, text: siteConfig.links.email, link: `mailto:${siteConfig.links.email}` }
+              { icon: <Cake className="size-4 sm:size-5 text-emerald-600 mx-2 sm:mx-4" />, text: `${siteConfig.author.birthYear} | ${siteConfig.author.weight} | ${siteConfig.author.height}` },
+              { icon: <MapPin className="size-4 sm:size-5 text-emerald-600 mx-2 sm:mx-4" />, text: siteConfig.author.location },
+              { icon: <Mail className="size-4 sm:size-5 text-emerald-600 mx-2 sm:mx-4" />, text: siteConfig.links.email, link: `mailto:${siteConfig.links.email}` }
             ].map((item, index) => (
               <motion.div 
                 key={index} 
@@ -136,8 +137,8 @@ export default function Page() {
                 transition={{ duration: 0.2 }}
                 variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
               >
-                <Card className="border-0 bg-white/80">
-                  <CardContent className="flex items-center py-0 px-4">
+                <Card className="border-0 bg-white/80 shadow-sm">
+                  <CardContent className="flex items-center py-3 px-3 sm:px-4 text-sm sm:text-base">
                     {item.icon}
                     {item.link ? (
                       <Link href={item.link} className="transition-colors hover:text-emerald-600">
@@ -155,17 +156,17 @@ export default function Page() {
             <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}>
               <SocialLinks 
                 links={siteConfig.socialLinks} 
-                className="border-0 -md bg-white/80" 
+                className="border-0 rounded-md sm:rounded-lg bg-white/80 shadow-sm" 
               />
             </motion.div>
             
             {/* Personal Records */}
             <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}>
-              <Card className="border-0 -md bg-white/80">
-                <CardHeader>
+              <Card className="border-0 rounded-md sm:rounded-lg bg-white/80 shadow-sm">
+                <CardHeader className="px-4 py-3 sm:px-6 sm:py-4">
                   <SectionHeader title="Recordes Pessoais" />
                 </CardHeader>
-                <CardContent>
+                <CardContent className="px-4 pb-4 sm:px-6 sm:pb-6 pt-0">
                   <div className="flex flex-wrap gap-3">
                     {siteConfig.achievements.map((achievement, index) => (
                       <motion.div 
@@ -175,7 +176,7 @@ export default function Page() {
                       >
                         <Badge
                           variant="outline"
-                          className="px-3 py-1.5 border-emerald-100 bg-gradient-to-r from-emerald-50 to-blue-50 text-emerald-700 -sm"
+                          className="px-2 py-1 sm:px-3 sm:py-1.5 text-xs sm:text-sm border-emerald-100 bg-gradient-to-r from-emerald-50 to-blue-50 text-emerald-700 rounded-md"
                         >
                           {`${achievement.distance} - ${achievement.time}`}
                         </Badge>
@@ -198,7 +199,7 @@ export default function Page() {
 
           {/* Center/Right Columns */}
           <motion.div 
-            className="space-y-8 md:col-span-2"
+            className="space-y-5 sm:space-y-6 md:space-y-8 md:col-span-2"
             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
           >
             {/* YouTube Banner */}
@@ -207,7 +208,7 @@ export default function Page() {
               transition={{ duration: 0.2 }}
               variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
             >
-              <Card className="overflow-hidden border-0  bg-gradient-to-r from-red-50 to-red-100">
+              <Card className="overflow-hidden border-0 shadow-sm bg-gradient-to-r from-red-50 to-red-100">
                 <CardContent className="p-6">
                   <div className="mb-4 flex items-center justify-between">
                     <div className="flex items-center gap-3">
@@ -215,22 +216,22 @@ export default function Page() {
                         whileHover={{ rotate: 10 }} 
                         transition={{ duration: 0.2 }}
                       >
-                        <Youtube className="size-8 text-red-500" />
+                        <Youtube className="size-6 sm:size-8 text-red-500" />
                       </motion.div>
                       <div>
-                        <div className="text-lg font-medium text-zinc-800">YouTube</div>
+                        <div className="text-base sm:text-lg font-medium text-zinc-800">YouTube</div>
                         <div className="text-sm text-zinc-500">
                           {siteConfig.socialLinks.find(link => link.platform === "youtube")?.username}
                         </div>
                       </div>
                     </div>
-                    <Button asChild className="bg-red-500 text-white hover:bg-red-600 -md" size="sm">
+                    <Button asChild className="bg-red-500 text-white hover:bg-red-600 rounded-md text-xs sm:text-sm" size="sm">
                       <Link href={siteConfig.links.youtube} target="_blank" rel="noopener noreferrer">
                         Inscreva-se <span className="ml-2 text-xs">6.3K</span>
                       </Link>
                     </Button>
                   </div>
-                  <p className="text-sm text-zinc-600">
+                  <p className="text-xs sm:text-sm text-zinc-600">
                     Dicas valiosas de treinamento, orientações práticas e insights sobre como melhorar seu desempenho na corrida.
                   </p>
                 </CardContent>
@@ -238,7 +239,7 @@ export default function Page() {
             </motion.div>
 
             {/* Feature Cards */}
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            <div className="grid grid-cols-1 gap-4 sm:gap-5 md:gap-6 md:grid-cols-2">
               {siteConfig.features.map((feature, index) => (
                 <motion.div 
                   key={index} 
@@ -252,11 +253,11 @@ export default function Page() {
                     icon={feature.icon as "calculator" | "wrench"}
                     buttonText={feature.buttonText}
                     buttonUrl={feature.buttonUrl}
-                    color={`bg-white/80 border-0 `}
+                    color="bg-white/80 border-0 shadow-sm"
                     accentColor={feature.icon === "calculator" ? "text-emerald-500" : "text-blue-500"}
                     buttonColor={feature.icon === "calculator" ? 
-                      "bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 -md" : 
-                      "bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 -md"
+                      "bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 rounded-md text-xs sm:text-sm" : 
+                      "bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 rounded-md text-xs sm:text-sm"
                     }
                   />
                 </motion.div>
@@ -267,13 +268,13 @@ export default function Page() {
             <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}>
               <FeaturedVideosSection 
                 videos={[...siteConfig.featuredVideos]}
-                className="border-0  bg-white/80"
+                className="border-0 rounded-md sm:rounded-lg bg-white/80 shadow-sm"
               />
             </motion.div>
             
             {/* Competitions */}
             <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}>
-              <Competitions className="border-0  bg-white/80" />
+              <Competitions className="border-0 rounded-md sm:rounded-lg bg-white/80 shadow-sm" />
             </motion.div>
           </motion.div>
         </motion.div>
